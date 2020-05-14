@@ -25,9 +25,6 @@
              <div>
            <input type='submit' id='valider' value='Soumettre'>
            </div>
-           <div>
-           <input type='submit' id='modifier' value='Modifier'>
-           </div>
          </form>
      </div>
 <br>

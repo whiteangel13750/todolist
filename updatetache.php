@@ -10,9 +10,6 @@
              <label> Date limite de la tache </label>
              <input type='date' id='date' name='date' placeholder="Date limite de la tache">
              </div>
-             <div>
-           <input type='submit' id='valider' value='Soumettre'>
-           </div>
            <div>
            <input type='submit' id='modifier' value='Modifier'>
            </div>

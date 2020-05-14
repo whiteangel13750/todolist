@@ -16,7 +16,7 @@
                 <input type='text' id='adresse' name='adresse' placeholder="Votre adresse e-mail" required='required'>
                 </div>
              <div>
-           <input type='submit' id='valider' value='Soumettre'>
+           <input type='submit' id='update' value='Modifier vos coordonnées'>
            </div>
          </form>
      </div>
