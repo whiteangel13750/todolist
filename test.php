@@ -36,7 +36,7 @@
 // date_default_timezone_set('America/Los_Angeles');
 // $now = date("d/m/Y H:i:s");
 // echo $now;
-require "models/Month.php";
+
 
 $date = new DateTimeImmutable("now", new DateTimeZone("Europe/Paris"));
 
@@ -48,6 +48,7 @@ $jour_courant= $date->format('d');
 
 echo "Nous sommes le $jour_courant/$mois_courant/$annee_courante";
 
-
-$mois = new Month($mois_courant, $annee_courante);
+require "models/Month.php";
+$month = new Month($mois_courant, $annee_courante);
+echo "Nous sommes en {$month->getmonthName()} {$month->getYear()}";
 ?>

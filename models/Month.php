@@ -1,31 +1,23 @@
 <?php
 
 Class Month {
-    public $year;
-    public $mois_courant;
+    private $year;
     private $monthName;
 
-    public function __construct(int $mois_courant, int $year){
-        $this->setMois_courant($mois_courant);
-        $this->setYear($year);
+    public function __construct(int $monthNum, int $year){
+        $this->setmonthName($monthNum);
+        $this->year = $year;
     }
 
-    public function getMois_Courant() {
-        return $this->mois_courant;
-    }
-
-    public function setMois_Courant($mois_courant) {
-        $this->mois_courant = $mois_courant;
-    }
-
-    public function getmonthName() : string {
+  public function getmonthName() : string {
         return $this->monthName;
     }
 
-    public function setmonthName(string $monthName) {
-        $this->monthName = $monthName;
-    }
-
+    public function setmonthName(int $num) {
+        $mois = [1=>'Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'];
+        $this->monthName = $mois[$num];
+    } 
+    
     public function getYear() : int {
         return $this->year;
     }
@@ -34,10 +26,5 @@ Class Month {
         $this->year = $year;
     }
 
-
-function monthName() {
-    $mois = ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'];
-    $this->monthName .= $mois[$this->mois_courant-1];
-}
 }
 ?>

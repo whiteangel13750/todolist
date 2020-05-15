@@ -43,7 +43,7 @@ switch($route) {
         break;   
     case "deconnect" : deconnectUser();
         break;
-    default : showHome();
+    default : $view= showHome();
 }
 
 // ------------------------------------------------------------------------------------
@@ -56,6 +56,11 @@ switch($route) {
 function showHome(): string {
 
     return "home.html";
+
+    $datas = ["annee"] = ;
+	// il suffit désormais de mettre dans $datas les données à transmettre à notre vue
+    // par exemple $datas["annee"] = 2020;
+	return ["template" => "home.html", "datas" => $datas];
 }
 
 function showMembre() {
@@ -157,7 +162,7 @@ function connectUser() {
     <title>Ma TODO-LIST</title>
 </head>
 <body>
-    <?php require "$view"?>
+    <?php require "$view['template']"?>
     
 </body>
 </html> 
