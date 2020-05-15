@@ -33,9 +33,11 @@ Class Month {
     }
 
 function monthName($month) {
-  $month = $this->format('m');
+    $month = $this->format('m');
 }
+
 }
+
 $month = new Month(5);
 var_dump($month);
 
