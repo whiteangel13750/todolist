@@ -1,6 +1,5 @@
 <?php
 
-require 'models\Month.php';
 // $array = [];
 
 // $texte = "Bonjour et au revoir ! Je m'appelle John Doe, j'ai 27 ans, j'habite en France et travaille depuis que j'ai 20 ans. Ma passion : écrire des mots, mits, mets, mats, mat... Pour me contacter, vous pouvez envoyer un email à contact@johndoe.fr ou contact@johndoe.com ou bien m'appeler au 06 07 08 09 10. Vous pouvez aussi aller voir mon blog à l'adresse johndoe-blog.fr. Bonjour et au revoir";
@@ -39,21 +38,17 @@ require 'models\Month.php';
 // echo $now;
 
 
-// $date = new DateTimeImmutable("now", new DateTimeZone("Europe/Paris"));
-// var_dump($date);
+$date = new DateTimeImmutable("now", new DateTimeZone("Europe/Paris"));
 
-// $annee_courante = $date->format('Y');
-// var_dump($annee_courante);
-// $mois_courant= $date->format('m');
-// var_dump($mois_courant);
-// $jour_courant= $date->format('d');
-// var_dump($jour_courant);
+$annee_courante = $date->format('Y');
 
-// $premier = $date->modify('last monday of this month');
-// var_dump($premier);
+$mois_courant= $date->format('m');
 
-$month = new Month(5, "");
-$month->monthName();
-var_dump($month);
+$jour_courant= $date->format('d');
+
+echo "Nous sommes le $jour_courant/$mois_courant/$annee_courante";
+
+require "models/Month.php";
+$month = new Month($mois_courant);
 
 ?>

@@ -4,9 +4,8 @@ Class Month {
     public $mois_courant;
     private $monthName;
 
-    public function __construct(int $mois_courant, string $monthName){
+    public function __construct(int $mois_courant){
         $this->setMois_courant($mois_courant);
-        $this->setmonthName($monthName);
     }
 
     public function getMois_Courant() {
