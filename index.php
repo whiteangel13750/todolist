@@ -57,7 +57,7 @@ function showHome(): string {
 
     return "home.html";
 
-    $datas = ["annee"] = ;
+    $datas = [$datas["mois"] = $month->getmonthName(),$datas["annee"] = $month->getYear()];
 	// il suffit désormais de mettre dans $datas les données à transmettre à notre vue
     // par exemple $datas["annee"] = 2020;
 	return ["template" => "home.html", "datas" => $datas];
@@ -162,7 +162,7 @@ function connectUser() {
     <title>Ma TODO-LIST</title>
 </head>
 <body>
-    <?php require "$view['template']"?>
+    <?php require "views/{$view['template']}";?>
     
 </body>
 </html> 
