@@ -27,6 +27,8 @@ $route = isset($_REQUEST["route"])? $_REQUEST["route"] : "home";
 switch($route) {
     case "home" : $view = showHome();
         break;
+    case "calendrier" : $view = showCalendar();
+    break;
     case "insert_user" : insertUser();
         break;
     case "connect_user" : connectUser();
@@ -53,15 +55,30 @@ switch($route) {
 
 // Fonctionnalité(s) d'affichage :
 
-function showHome(): string {
+function showHome() {
 
-    return "home.html";
-
-    $datas = [$datas["mois"] = $month->getmonthName(),$datas["annee"] = $month->getYear()];
+    if(isset($_SESSION["utilisateur"])) {
+        header("Location:index.php?route=membre");
+    }
+	
+	$datas = [];
 	// il suffit désormais de mettre dans $datas les données à transmettre à notre vue
     // par exemple $datas["annee"] = 2020;
 	return ["template" => "home.html", "datas" => $datas];
+
 }
+
+function showCalendar() {
+        $aujd = new DateTimeImmutable("now", new DateTimeZone("europe/Paris"));
+        $annee_courante = $aujd->format("Y");
+        $mois_courant = $aujd->format("m");
+        $month = new Month($mois_courant, $annee_courante);
+        $datas = [
+            "mois" => $month->getMonthName(),
+            "annee" => $month->getYear()
+        ];
+        return ["template" => "calendrier.php", "datas" => $datas];
+    }
 
 function showMembre() {
 
