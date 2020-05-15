@@ -7,7 +7,7 @@ class Utilisateurs extends Dbconnect {
     private $adresse;
     private $pseudo;
     private $password;
-
+ 
 // Le construct permet d'établir une structure de notre utilisateur
     function __construct($id=null) {
         parent::__construct($id);
