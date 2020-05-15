@@ -1,5 +1,6 @@
 <?php
 
+require 'models\Month.php';
 // $array = [];
 
 // $texte = "Bonjour et au revoir ! Je m'appelle John Doe, j'ai 27 ans, j'habite en France et travaille depuis que j'ai 20 ans. Ma passion : écrire des mots, mits, mets, mats, mat... Pour me contacter, vous pouvez envoyer un email à contact@johndoe.fr ou contact@johndoe.com ou bien m'appeler au 06 07 08 09 10. Vous pouvez aussi aller voir mon blog à l'adresse johndoe-blog.fr. Bonjour et au revoir";
@@ -19,15 +20,40 @@
 //     // On ne peut pas ajouter le numéro à la base de donnée
 // }
 
-$nom =["Dupont", "Henri", "9ieux", "Goût", "G3ntil", "Géorges", "L'Hotellier","Martïn"];
+// $nom =["Dupont", "Henri", "9ieux", "Goût", "G3ntil", "Géorges", "L'Hotellier","Martïn"];
 
-foreach($nom as $value){
-    if (preg_match("#^[a-zA-ZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ' ()]*$#", $value)) {
-        echo "Le nom entré est correct.<br>";
-    } else {
-        echo "Le nom entré est incorrect.<br>";
-    }
-}
+// foreach($nom as $value){
+//     if (preg_match("#^[a-zA-ZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØŒŠþÙÚÛÜÝŸàáâãäåæçèéêëìíîïðñòóôõöøœšÞùúûüýÿ' ()]*$#", $value)) {
+//         echo "Le nom entré est correct.<br>";
+//     } else {
+//         echo "Le nom entré est incorrect.<br>";
+//     }
+// }
 
+// date_default_timezone_set('Europe/Paris');
+// $now = date("d/m/Y H:i:s");
+// echo $now;
+// echo "<br>";
+// date_default_timezone_set('America/Los_Angeles');
+// $now = date("d/m/Y H:i:s");
+// echo $now;
+
+
+// $date = new DateTimeImmutable("now", new DateTimeZone("Europe/Paris"));
+// var_dump($date);
+
+// $annee_courante = $date->format('Y');
+// var_dump($annee_courante);
+// $mois_courant= $date->format('m');
+// var_dump($mois_courant);
+// $jour_courant= $date->format('d');
+// var_dump($jour_courant);
+
+// $premier = $date->modify('last monday of this month');
+// var_dump($premier);
+
+$month = new Month(5);
+$month->monthName();
+var_dump($month);
 
 ?>

@@ -1,44 +1,33 @@
 <?php
-// date_default_timezone_set('Europe/Paris');
-// $now = date("d/m/Y H:i:s");
-// echo $now;
-// echo "<br>";
-// date_default_timezone_set('America/Los_Angeles');
-// $now = date("d/m/Y H:i:s");
-// echo $now;
-
-
-// $date = new DateTimeImmutable("now", new DateTimeZone("Europe/Paris"));
-// var_dump($date);
-
-// $annee_courante = $date->format('Y');
-// var_dump($annee_courante);
-// $mois_courant= $date->format('m');
-// var_dump($mois_courant);
-// $jour_courant= $date->format('d');
-// var_dump($jour_courant);
-
-// $premier = $date->modify('last monday of this month');
-// var_dump($premier);
 
 Class Month {
+    public $mois_courant;
     private $monthName;
 
-    public function getMonth() {
+    public function __construct(int $mois_courant){
+        $this->setMois_courant($mois_courant);
+    }
+
+    public function getMois_Courant() {
+        return $this->mois_courant;
+    }
+
+    public function setMois_Courant($mois_courant) {
+        $this->mois_courant = $mois_courant;
+    }
+
+    public function getMonth() : string {
         return $this->monthName;
     }
 
-    public function setMonth($month) {
-        $this->monthName = $month;
+    public function setMonth(string $name) {
+        $this->monthName = $name;
     }
 
-function monthName($month) {
-    $month = $this->format('m');
+
+function monthName() {
+    $mois = ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'];
+    $this->monthName .= $mois[$this->setMois_Courant($this->getMois_Courant())];
 }
-
 }
-
-$month = new Month(5);
-var_dump($month);
-
 ?>
