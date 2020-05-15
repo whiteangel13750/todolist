@@ -1,11 +1,13 @@
 <?php
 
 Class Month {
+    public $year;
     public $mois_courant;
     private $monthName;
 
-    public function __construct(int $mois_courant){
+    public function __construct(int $mois_courant, int $year){
         $this->setMois_courant($mois_courant);
+        $this->setYear($year);
     }
 
     public function getMois_Courant() {
@@ -22,6 +24,14 @@ Class Month {
 
     public function setmonthName(string $monthName) {
         $this->monthName = $monthName;
+    }
+
+    public function getYear() : int {
+        return $this->year;
+    }
+
+    public function setYear(int $year) {
+        $this->year = $year;
     }
 
 

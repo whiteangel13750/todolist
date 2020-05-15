@@ -157,7 +157,6 @@ function connectUser() {
     <title>Ma TODO-LIST</title>
 </head>
 <body>
-
     <?php require "$view"?>
     
 </body>
