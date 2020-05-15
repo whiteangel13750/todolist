@@ -52,7 +52,7 @@ require 'models\Month.php';
 // $premier = $date->modify('last monday of this month');
 // var_dump($premier);
 
-$month = new Month(5);
+$month = new Month(5, "");
 $month->monthName();
 var_dump($month);
 

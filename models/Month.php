@@ -4,8 +4,9 @@ Class Month {
     public $mois_courant;
     private $monthName;
 
-    public function __construct(int $mois_courant){
+    public function __construct(int $mois_courant, string $monthName){
         $this->setMois_courant($mois_courant);
+        $this->setmonthName($monthName);
     }
 
     public function getMois_Courant() {
@@ -16,18 +17,18 @@ Class Month {
         $this->mois_courant = $mois_courant;
     }
 
-    public function getMonth() : string {
+    public function getmonthName() : string {
         return $this->monthName;
     }
 
-    public function setMonth(string $name) {
-        $this->monthName = $name;
+    public function setmonthName(string $monthName) {
+        $this->monthName = $monthName;
     }
 
 
 function monthName() {
     $mois = ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'];
-    $this->monthName .= $mois[$this->setMois_Courant($this->getMois_Courant())];
+    $this->monthName .= $mois[$this->mois_courant-1];
 }
 }
 ?>
